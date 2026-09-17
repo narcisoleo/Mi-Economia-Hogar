@@ -1,0 +1,76 @@
+ECO HOGAR v2.2.6 - PUBLICACIÓN 24/7 EN VERCEL
+================================================
+
+OBJETIVO
+- Dejar ECO HOGAR disponible aunque la PC esté apagada.
+- HTTPS automático.
+- PWA instalable en celular.
+- Mantener Supabase Auth + MFA + RLS + Storage privado.
+- Mantener lectura de PDFs digitales en la nube.
+
+A. VARIABLES QUE VERCEL NECESITA
+--------------------------------
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+NEXT_PUBLIC_SITE_URL
+ECO_PARSER_INTERNAL_SECRET
+
+IMPORTANTE:
+- No subir .env.local a Internet ni a GitHub.
+- No usar service_role en el navegador ni en NEXT_PUBLIC_*.
+- ECO_PARSER_INTERNAL_SECRET es un secreto interno servidor-servidor.
+
+B. PRIMER DEPLOY DESDE WINDOWS
+-------------------------------
+1. Abrir CMD o PowerShell en la carpeta del proyecto.
+2. Ejecutar:
+   npx.cmd vercel@latest
+3. Iniciar sesión cuando Vercel lo solicite.
+4. Responder para crear un proyecto nuevo y aceptar la detección de Next.js.
+5. Cuando Vercel entregue la URL, guardarla.
+
+C. CONFIGURAR VARIABLES EN VERCEL
+----------------------------------
+En Vercel > Project > Settings > Environment Variables agregar:
+- NEXT_PUBLIC_SUPABASE_URL = la misma URL de .env.local
+- NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY = la misma publishable key de .env.local
+- NEXT_PUBLIC_SITE_URL = https://TU-PROYECTO.vercel.app
+- ECO_PARSER_INTERNAL_SECRET = una cadena aleatoria larga (32+ caracteres)
+
+Para generar el secreto en PowerShell:
+[guid]::NewGuid().ToString("N") + [guid]::NewGuid().ToString("N")
+
+Luego volver a desplegar producción:
+npx.cmd vercel@latest --prod
+
+D. SUPABASE AUTH
+-----------------
+Supabase > Authentication > URL Configuration
+- Site URL: https://TU-PROYECTO.vercel.app
+- Redirect URLs: conservar localhost y agregar:
+  https://TU-PROYECTO.vercel.app/**
+
+Conservar también:
+  http://localhost:3000/**
+para seguir desarrollando localmente.
+
+E. PRUEBA DE PRODUCCIÓN
+------------------------
+1. Abrir la URL HTTPS de Vercel.
+2. Iniciar con email + contraseña + MFA.
+3. Ver Dashboard.
+4. Abrir Cuentas, Tarjetas, Estadísticas y Seguridad.
+5. Probar el resumen Visa/Mastercard PDF.
+6. Probar un comprobante PDF.
+7. Cerrar con Salir y volver a entrar.
+
+F. INSTALAR PWA EN ANDROID
+---------------------------
+Chrome > menú ⋮ > Instalar aplicación / Añadir a pantalla principal.
+Abrir desde el icono ECO HOGAR y volver a probar MFA.
+
+NOTA SOBRE PDF
+--------------
+- Local: lectura automática hasta 10 MB.
+- Vercel cloud: lectura automática hasta 3 MB por límites de payload.
+- El archivo original en Supabase Storage mantiene el límite configurado de 10 MB.

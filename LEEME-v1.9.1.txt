@@ -1,0 +1,14 @@
+ECO HOGAR v1.9.1 - CORRECCION IMPORTADOR CSV
+
+1) Copiar/reemplazar esta versión en la carpeta habitual del proyecto.
+2) Conservar el archivo .env.local actual.
+3) En Supabase > SQL Editor ejecutar UNA VEZ:
+   SUPABASE-v1.9.1-IMPORTACION.sql
+4) Iniciar con INICIAR-ECO-HOGAR.bat
+5) Verificar que la app muestre v1.9.1.
+
+MEJORAS:
+- CSV de Excel compatible con UTF-8 y Windows-1252/ANSI.
+- Corrige input_source_check.
+- Plantilla generada usando los nombres reales de tus cuentas y categorías.
+- Mensajes de validación de categorías más claros.

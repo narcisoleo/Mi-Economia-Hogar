@@ -1,0 +1,11 @@
+ECO HOGAR v2.2.4
+
+Hotfix de actualización desde v2.2/v2.2.1.
+
+- Fuerza limpieza de .next al iniciar para evitar ver una compilación anterior.
+- Fuerza comprobación de actualización del Service Worker PWA.
+- Muestra la carpeta activa en INICIAR-ECO-HOGAR.bat.
+- Mantiene MFA, backup y cambio/recuperación de contraseña.
+
+No requiere SQL nuevo.
+Conservar .env.local.

@@ -1,0 +1,15 @@
+ECO HOGAR v2.0.4
+
+CORRECCIÓN
+- Corrige el error al crear automáticamente una tarjeta detectada desde un resumen PDF.
+- Reutiliza una cuenta credit_card huérfana de un intento previo en vez de duplicarla.
+- Crea primero la estructura base de la tarjeta y luego sus metadatos Visa/Mastercard/últimos 4.
+- Mejora el mensaje de error para mostrar el motivo real de Supabase.
+
+INSTALACIÓN
+1. Copiar/reemplazar los archivos en el proyecto manteniendo .env.local.
+2. Ejecutar UNA VEZ en Supabase SQL Editor:
+   SUPABASE-v2.0.4-TARJETAS-RESUMEN.sql
+3. Reiniciar con INICIAR-ECO-HOGAR.bat.
+4. Confirmar badge v2.0.4.
+5. Volver a cargar el resumen PDF.

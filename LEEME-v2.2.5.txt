@@ -1,0 +1,10 @@
+ECO HOGAR v2.2.5 - CLOUD READY
+================================
+
+1) Reemplazar los archivos de la app conservando .env.local.
+2) Iniciar con INICIAR-ECO-HOGAR.bat y comprobar v2.2.5.
+3) Verificar Dashboard, MFA y el nuevo botón Salir.
+4) La lectura PDF local continúa usando Python de Windows.
+5) Para publicar en Vercel usar PUBLICAR-ECO-HOGAR-v2.2.5.txt.
+
+NO ejecutar SQL nuevo.

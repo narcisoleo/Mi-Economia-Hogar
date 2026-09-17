@@ -1,0 +1,21 @@
+ECO HOGAR v2.0.3
+==================
+
+NOVEDADES
+- El lector de resúmenes ya no asigna una tarjeta nueva a la tarjeta seleccionada previamente.
+- Detección por marca, últimos 4 dígitos y titular.
+- Si el PDF pertenece a una tarjeta no registrada, al guardar el resumen ECO HOGAR crea automáticamente una tarjeta de crédito separada.
+- Si el mismo resumen había sido asignado por error a otra tarjeta en v2.0/v2.0.1, al volver a cargarlo se reasigna al instrumento correcto y se mueven los consumos importados asociados.
+- En Tarjetas aparece "Eliminar tarjeta". Solo permite borrado definitivo cuando la tarjeta no tiene movimientos, resúmenes ni recurrentes, para evitar pérdida de historial.
+
+REPARAR EL MASTERCARD CARGADO SOBRE VISA
+1. Iniciar ECO HOGAR v2.0.3.
+2. Ir a Tarjetas > Leer resumen PDF.
+3. Volver a cargar el mismo PDF Mastercard.
+4. ECO HOGAR debe indicar que no coincide con Visa.
+5. Revisar el titular detectado.
+6. Presionar "Crear tarjeta + guardar resumen".
+7. La nueva Mastercard queda separada; si el resumen ya existía mal asignado, se reasigna y los movimientos importados desde ese PDF se mueven a la nueva tarjeta.
+8. Volver a cargar y guardar el resumen Visa si querés verificar/restablecer sus datos de límite y calendario.
+
+No requiere SQL nuevo si ya ejecutaste SUPABASE-v2.0-RESUMENES-INTELIGENTES.sql.

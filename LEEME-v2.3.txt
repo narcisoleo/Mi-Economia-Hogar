@@ -1,0 +1,18 @@
+ECO HOGAR v2.3.1 - VOZ + COMPARTIR COMPROBANTES
+
+Novedades:
+- Botón “Registrar por voz” en Dashboard y en Nuevo movimiento.
+- Reconocimiento de voz en español (es-AR) usando Web Speech API del navegador.
+- Interpreta tipo, importe, cuenta, responsable y categoría cuando puede; siempre requiere revisión antes de guardar.
+- La PWA instalada se registra como destino del menú Compartir de Android para JPG, PNG, WEBP, PDF, texto y enlaces.
+- Los archivos compartidos se reciben primero en caché temporal local del dispositivo; no se guardan en Supabase hasta confirmar el movimiento.
+- Al recibir un comprobante, ECO HOGAR intenta leerlo y completar el formulario.
+- input_source distingue voice / shared / receipt / manual.
+
+IMPORTANTE DESPUÉS DE PUBLICAR:
+1) Abrir ECO HOGAR instalada y cerrarla/reabrirla para actualizar el Service Worker.
+2) Si ECO HOGAR no aparece en el menú Compartir de Android, desinstalar la PWA y volver a instalarla. El registro share_target se toma del manifest instalado.
+3) La primera vez que uses voz, Android/Chrome pedirá permiso de micrófono.
+4) Compartir archivos como destino PWA depende del soporte del sistema/navegador; en Android Chrome es el objetivo principal.
+
+No requiere SQL nuevo.

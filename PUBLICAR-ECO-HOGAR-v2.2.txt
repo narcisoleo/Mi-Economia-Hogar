@@ -1,0 +1,55 @@
+ECO HOGAR v2.2 - GUIA DE PUBLICACION 24/7
+=========================================
+
+OBJETIVO
+Pasar de http://localhost:3000 a una URL HTTPS para usar ECO HOGAR desde
+celulares y PCs sin dejar una computadora encendida.
+
+RECOMENDACION
+Publicar el proyecto Next.js en Vercel y mantener Supabase como backend.
+La aplicacion no requiere service_role en el navegador.
+
+PASOS GENERALES
+1. Guardar una copia de seguridad del proyecto y de .env.local.
+2. Subir el codigo a un repositorio privado o importar el proyecto a Vercel.
+3. En el hosting crear estas variables de entorno:
+   NEXT_PUBLIC_SUPABASE_URL
+   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+   NEXT_PUBLIC_SITE_URL=https://TU-DOMINIO
+4. Desplegar.
+5. Copiar la URL HTTPS final.
+6. Supabase > Authentication > URL Configuration:
+   - Site URL: https://TU-DOMINIO
+   - Redirect URLs: https://TU-DOMINIO/**
+   - Conservar http://localhost:3000/** mientras sigas desarrollando localmente.
+7. Probar login, recuperación de contraseña, MFA, comprobantes y resúmenes PDF.
+8. Instalar la PWA desde el celular.
+
+ANTES DE PUBLICAR
+- Ejecutar SUPABASE-v2.2-AUDITORIA-SEGURIDAD.sql.
+- Confirmar que todas las tablas financieras tengan RLS activo.
+- Confirmar que receipts y card-statements sean buckets privados.
+- Nunca publicar una service_role key.
+- Mantener solo NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY en el frontend.
+- Activar MFA para Leonardo y Sofia.
+
+NOTA SOBRE EL LECTOR PDF
+La lectura de resúmenes/comprobantes PDF actualmente usa Python local desde
+Route Handlers. En un hosting serverless puede requerir adaptar ese lector para
+no depender de un ejecutable Python del sistema. El resto de la app está listo
+para despliegue. Antes del despliegue definitivo hay que validar esa ruta en el
+hosting elegido.
+
+ACTUALIZACIÓN v2.2.4
+--------------------
+Antes de publicar, ejecutar y validar en este orden:
+1) SUPABASE-v2.2.4-PRECHECK-MFA.sql
+2) SUPABASE-v2.2.4-HARDENING.sql
+3) SUPABASE-v2.2.4-AUDITORIA-FINAL.sql
+
+ACTUALIZACIÓN v2.2.4
+--------------------
+No ejecutar el hardening MFA opcional de v2.2.3. Si ya fue ejecutado y el Dashboard
+no puede leer household_members, ejecutar SUPABASE-v2.2.4-RECUPERAR-ACCESO.sql.
+La app mantiene el MFA obligatorio a nivel de flujo web/proxy. Antes de endurecer MFA
+directamente en PostgreSQL, activar MFA en todos los usuarios del hogar y validar AAL2.

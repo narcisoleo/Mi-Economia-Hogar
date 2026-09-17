@@ -1,0 +1,38 @@
+ECO HOGAR v1.9 - IMPORTACION Y COMPROBANTES
+=============================================
+
+NOVEDADES
+- Nueva pantalla Importar desde el Dashboard.
+- Importacion masiva de movimientos mediante CSV.
+- Plantilla CSV descargable desde la propia app.
+- Vista previa y validacion antes de importar.
+- Deteccion de duplicados exactos para evitar cargar dos veces el mismo movimiento.
+- Etiqueta "Importado CSV" en el Dashboard.
+- Comprobante opcional al registrar/editar movimientos: JPG, PNG, WEBP o PDF, hasta 10 MB.
+- Los comprobantes se guardan en Supabase Storage privado.
+- En el Dashboard aparece "Ver comprobante" cuando un movimiento tiene archivo adjunto.
+- Al eliminar un movimiento, la app intenta eliminar tambien su comprobante.
+
+IMPORTANTE - SUPABASE
+Antes de adjuntar comprobantes ejecutar UNA SOLA VEZ:
+SUPABASE-v1.9-COMPROBANTES.sql
+
+La importacion CSV no depende del Storage y puede usarse igualmente.
+
+FORMATO CSV
+Columnas recomendadas:
+fecha;tipo;importe;cuenta;cuenta_destino;categoria;subcategoria;responsable;comercio;descripcion
+
+Tipos aceptados:
+- gasto / expense
+- ingreso / income
+- transferencia / transfer
+
+Fechas:
+- DD/MM/AAAA
+- AAAA-MM-DD
+
+Para evitar errores de nombres, lo mas sencillo es descargar la plantilla desde la pantalla Importar y usar exactamente los nombres de cuentas, categorias y responsables que ya existen en ECO HOGAR.
+
+SIGUIENTE ETAPA
+v2.0: OCR/IA para leer tickets y comprobantes y proponer importe, comercio, fecha y categoria antes de guardar.

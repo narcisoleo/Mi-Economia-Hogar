@@ -1,0 +1,15 @@
+ECO HOGAR v2.2.4
+==================
+
+1. Copiar/reemplazar los archivos sobre el proyecto actual.
+2. Conservar .env.local.
+3. Ejecutar INICIAR-ECO-HOGAR.bat.
+4. Entrar a Dashboard > Seguridad.
+5. Probar Cambiar contraseña o Enviar recuperación por email.
+
+No requiere SQL nuevo.
+
+En localhost, el email de recuperación debe volver a:
+http://localhost:3000/update-password
+
+Cuando ECO HOGAR se publique, agregar también la URL HTTPS equivalente a los Redirect URLs de Supabase.

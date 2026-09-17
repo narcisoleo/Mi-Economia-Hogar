@@ -1,0 +1,58 @@
+ECO HOGAR v1.6.2
+=================
+
+IMPORTANTE: esta versión requiere ejecutar UNA VEZ:
+SUPABASE-v1.6.2-CUENTAS-Y-TARJETAS.sql
+
+en Supabase > SQL Editor.
+
+QUÉ CORRIGE
+-----------
+En v1.6/v1.6.1 una cuenta bancaria podía configurarse por error como tarjeta.
+v1.6.2 separa ambos conceptos:
+
+- Banco Provincia Leonardo = cuenta bancaria / saldo disponible.
+- Tarjeta Banco Provincia Leonardo = tarjeta / deuda y límite.
+
+Si ya configuraste Banco Provincia como tarjeta, el SQL migra automáticamente
+esa configuración a una tarjeta separada y conserva límite y calendario mensual.
+La cuenta bancaria original permanece intacta.
+
+NUEVO
+-----
+1. Cuentas y saldos > Agregar cuenta
+   Permite crear bancos, billeteras, efectivo u otras cuentas.
+
+2. Tarjetas > Agregar tarjeta
+   Permite crear una tarjeta nueva con titular, institución y límite.
+
+3. Nuevo movimiento > Gasto
+   Las tarjetas aparecen en un grupo separado. Una compra con tarjeta suma gasto
+   y deuda, pero NO baja el saldo bancario.
+
+4. Tarjetas > Pagar tarjeta
+   El pago baja la cuenta origen y reduce deuda, sin duplicar el gasto.
+
+5. El Dashboard ya no mezcla deuda de tarjetas con el total de dinero disponible
+   en cuentas.
+
+ORDEN DE INSTALACIÓN
+--------------------
+1. Copiar/reemplazar los archivos de esta versión en la carpeta de ECO HOGAR.
+2. Conservar el .env.local actual.
+3. Ejecutar SUPABASE-v1.6.2-CUENTAS-Y-TARJETAS.sql una sola vez.
+4. Ejecutar INICIAR-ECO-HOGAR.bat.
+5. Confirmar que arriba figure v1.6.2.
+
+PRUEBA RECOMENDADA
+------------------
+Después de la migración, verificá que existan por separado la cuenta bancaria y
+la tarjeta. Luego registrá una compra de prueba de $1.000 usando la TARJETA:
+- Gastos del mes: +$1.000
+- Deuda tarjeta: +$1.000
+- Saldo banco: sin cambios
+
+Luego pagá $400 desde Tarjetas > Pagar tarjeta:
+- Saldo banco: -$400
+- Deuda tarjeta: queda $600
+- Gastos del mes: siguen en $1.000

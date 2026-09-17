@@ -1,0 +1,6 @@
+ECO HOGAR v1.7.2.1
+
+Corrección de la v1.7.2: el código de la mejora estaba incluido, pero varios badges visibles seguían mostrando v1.7.1.
+
+No requiere SQL nuevo.
+Conservar .env.local al reemplazar los archivos.

@@ -1,0 +1,20 @@
+ECO HOGAR v1.7 - PLANIFICACION
+================================
+
+1. Copiar/reemplazar esta versión sobre la carpeta de ECO HOGAR.
+2. Conservar el archivo .env.local actual.
+3. En Supabase > SQL Editor ejecutar UNA VEZ:
+   SUPABASE-v1.7-PLANIFICACION.sql
+4. Ejecutar INICIAR-ECO-HOGAR.bat.
+5. Entrar a Dashboard > Planificación.
+
+NUEVO
+- Presupuestos mensuales por categoría.
+- Seguimiento Presupuesto / Gastado / Disponible.
+- Reglas mensuales para gastos e ingresos recurrentes.
+- Botón para generar los movimientos pendientes del mes.
+- Evita generar dos veces la misma regla en el mismo mes.
+
+NOTA
+Un recurrente NO se genera automáticamente al llegar el día. Se genera desde
+Planificación. Esto permite confirmar que el débito/ingreso realmente ocurrió.

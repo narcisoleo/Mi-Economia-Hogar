@@ -1,0 +1,14 @@
+ECO HOGAR v2.3.1 - ACTUALIZAR PRODUCCIÓN
+
+1. Reemplazar archivos del proyecto local por esta versión.
+2. CONSERVAR sin borrar:
+   - .env.local
+   - .vercel
+3. Probar localmente con INICIAR-ECO-HOGAR.bat.
+4. Publicar desde PowerShell dentro del proyecto:
+   npx.cmd vercel@latest --prod
+5. Abrir la URL de producción y comprobar que se vea v2.3.1.
+6. En el celular, abrir la PWA instalada y cerrarla/reabrirla para actualizar el service worker.
+7. Para que ECO HOGAR aparezca en el menú Compartir de Android, si no aparece tras actualizar, desinstalar la PWA y volver a instalarla. Esto fuerza a Android/Chrome a registrar el nuevo share_target del manifest.
+
+No requiere SQL nuevo ni variables de entorno nuevas.

@@ -1,0 +1,14 @@
+ECO HOGAR v1.6 - IMPORTANTE
+
+1) Copiá/reemplazá los archivos de esta versión en tu carpeta principal.
+2) Conservá tu .env.local actual.
+3) Abrí Supabase > SQL Editor.
+4) Ejecutá UNA VEZ el archivo: SUPABASE-v1.6-TARJETAS.sql
+5) Ejecutá INICIAR-ECO-HOGAR.bat
+6) Entrá al Dashboard y abrí "Tarjetas".
+
+LÓGICA:
+- Compra con tarjeta = GASTO usando la cuenta Naranja/tarjeta.
+- El saldo negativo de la tarjeta representa deuda.
+- Pago de tarjeta = usar Tarjetas > Pagar tarjeta.
+- El pago es una transferencia y NO vuelve a sumar el gasto.

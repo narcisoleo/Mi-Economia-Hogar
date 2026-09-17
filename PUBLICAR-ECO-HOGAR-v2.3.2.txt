@@ -1,0 +1,19 @@
+ECO HOGAR v2.3.2 - PUBLICACIÓN
+================================
+
+Prerequisitos ya configurados en Vercel:
+- NEXT_PUBLIC_SUPABASE_URL
+- NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+- NEXT_PUBLIC_SITE_URL
+- ECO_PARSER_INTERNAL_SECRET
+
+Conservar en el proyecto local:
+- .env.local
+- .vercel
+
+Publicación:
+  npx.cmd vercel@latest --prod
+
+Luego comprobar en producción que la cabecera muestre v2.3.2.
+
+Para Web Share Target en Android, una PWA previamente instalada puede conservar el manifest antiguo. Si ECO HOGAR no aparece en Compartir después del deploy, desinstalar únicamente la PWA y reinstalarla desde Chrome. Los datos financieros permanecen en Supabase.

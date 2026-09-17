@@ -1,0 +1,28 @@
+ECO HOGAR v2.2.4
+==================
+
+Objetivo de esta versión: cerrar el hardening de Supabase antes de publicar ECO HOGAR 24/7.
+
+CAMBIOS
+- Limpieza segura de políticas RLS duplicadas conocidas en accounts y credit_cards.
+- SECURITY DEFINER conocido endurecido con search_path vacío.
+- Se revoca exposición directa innecesaria de funciones trigger.
+- Política MFA RESTRICTIVA a nivel PostgreSQL para usuarios que ya tengan MFA activado.
+- Protección MFA equivalente para el bucket privado receipts.
+- PRECHECK para ver qué integrantes del hogar tienen factor MFA verificado.
+- Auditoría final de views, grants, funciones y políticas MFA.
+
+ORDEN RECOMENDADO
+1. Reemplazar la versión anterior conservando .env.local.
+2. Iniciar ECO HOGAR y comprobar que diga v2.2.4.
+3. En Supabase SQL Editor ejecutar SUPABASE-v2.2.4-PRECHECK-MFA.sql.
+4. Ejecutar SUPABASE-v2.2.4-HARDENING.sql.
+5. Cerrar sesión de Leonardo y volver a entrar con contraseña + MFA.
+6. Verificar Dashboard, cuentas, tarjetas, comprobantes y backup.
+7. Iniciar sesión con Sofía. Si aún no tiene MFA, puede entrar normalmente y activarlo desde Seguridad.
+   Desde el momento en que lo active, PostgreSQL exigirá AAL2 automáticamente para su cuenta.
+8. Ejecutar SUPABASE-v2.2.4-AUDITORIA-FINAL.sql y enviar el resultado para la última revisión.
+
+IMPORTANTE
+El hardening no borra movimientos, cuentas, tarjetas ni comprobantes.
+La política MFA es "opt-in enforced": si un usuario tiene un factor MFA verificado, la base exige AAL2.

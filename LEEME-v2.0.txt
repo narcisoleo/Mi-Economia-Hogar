@@ -1,0 +1,20 @@
+ECO HOGAR v2.0 - RESUMENES INTELIGENTES
+=======================================
+
+1) Copiar/reemplazar esta version sobre la carpeta habitual de ECO HOGAR.
+2) NO reemplazar ni borrar .env.local.
+3) En Supabase > SQL Editor ejecutar UNA vez:
+   SUPABASE-v2.0-RESUMENES-INTELIGENTES.sql
+4) Ejecutar INICIAR-ECO-HOGAR.bat.
+5) Verificar que la app muestre v2.0.
+6) Entrar en Tarjetas > Leer resumen PDF.
+7) Subir un PDF digital de Visa o Mastercard Banco Provincia.
+8) Revisar la informacion detectada antes de guardar/importar.
+
+IMPORTANTE
+- La lectura se realiza localmente y no usa API paga.
+- Requiere Python 3 instalado en Windows.
+- pypdf viene incluido dentro de tools/vendor: no hay que hacer pip install.
+- Esta primera version v2.0 reconoce los formatos reales de Banco Provincia
+  usados para desarrollar el lector. Otros bancos se agregaran por plantillas.
+- Los PDF escaneados/fotos sin texto necesitan OCR; quedara para la siguiente etapa.

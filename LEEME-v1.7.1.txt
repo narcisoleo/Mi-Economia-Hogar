@@ -1,0 +1,11 @@
+ECO HOGAR v1.7.1
+
+1) Copiar/reemplazar los archivos sobre la carpeta actual de ECO HOGAR.
+2) Conservar .env.local.
+3) NO hay SQL nuevo para esta revisión.
+4) Ejecutar INICIAR-ECO-HOGAR.bat.
+
+PRUEBAS RECOMENDADAS
+- Crear un recurrente con día futuro: debe quedar Programado y NO afectar el resultado todavía.
+- Crear/generar uno con día de hoy o anterior: debe registrarse con esa fecha y aparecer en Dashboard con etiqueta Recurrente.
+- Revisar Dashboard: Dinero real en cuentas y Tarjetas de crédito deben verse separados.

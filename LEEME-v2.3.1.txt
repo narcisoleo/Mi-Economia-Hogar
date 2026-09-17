@@ -1,0 +1,12 @@
+ECO HOGAR v2.3.1 — Voz de mayor precisión
+
+Mejoras principales:
+- Corrige importes dictados con separadores de miles: 35,000 / 35.000 => $35.000.
+- Interpreta "mil", "k", "luca/lucas" y números escritos en palabras.
+- Toma hasta 5 alternativas del reconocimiento de voz y elige la más consistente con un movimiento financiero.
+- Permite fechas por voz: hoy, ayer, anteayer, 31/08/2026, 31 de agosto.
+- Muestra un resumen "Interpreté" con importe, cuenta, categoría, comercio, responsable y fecha antes de guardar.
+- Muestra el importe formateado debajo del campo para detectar errores de magnitud antes de confirmar.
+- Mantiene Share Target para compartir comprobantes desde otras apps.
+
+No requiere SQL nuevo ni variables nuevas en Vercel.

@@ -1,0 +1,16 @@
+ECO HOGAR v2.0.3
+===================
+
+Corrección para Next.js 16.3.1 con cacheComponents.
+
+PROBLEMA CORREGIDO
+- Se eliminó `export const runtime = "nodejs"` de la ruta API del lector de resúmenes.
+- Next.js usa el runtime Node.js predeterminado para Route Handlers, por lo que el lector sigue pudiendo usar fs, os, path y child_process.
+
+INSTALACIÓN
+1. Copiar/reemplazar los archivos sobre tu proyecto.
+2. Conservar tu .env.local.
+3. Si ya ejecutaste SUPABASE-v2.0-RESUMENES-INTELIGENTES.sql, NO volver a ejecutar SQL.
+4. Ejecutar INICIAR-ECO-HOGAR.bat.
+5. Verificar badge v2.0.3.
+6. Probar Tarjetas > Leer resumen PDF.

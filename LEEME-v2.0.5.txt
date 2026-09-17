@@ -1,0 +1,22 @@
+ECO HOGAR v2.0.5 - POSICION FINANCIERA ACTUAL E HISTORICA
+
+INSTALACION
+1. Copiar/reemplazar los archivos sobre el proyecto actual.
+2. Conservar .env.local.
+3. No ejecutar SQL nuevo.
+4. Iniciar con INICIAR-ECO-HOGAR.bat.
+5. Confirmar badge v2.0.5.
+
+NOVEDAD
+En Dashboard > Posición financiera aparecen dos vistas:
+
+ACTUAL
+- Acumula movimientos hasta la fecha de hoy.
+- Responde: cuanto dinero real tengo, cuanto debo en tarjetas y cual es mi neto hoy.
+
+AL CIERRE DEL MES
+- Usa el mes seleccionado arriba.
+- Acumula solo movimientos hasta el ultimo dia de ese mes.
+- Permite comparar la evolucion patrimonial mes a mes.
+
+Ingresos, Gastos y Resultado siguen correspondiendo exclusivamente al mes seleccionado.

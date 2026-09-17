@@ -1,0 +1,18 @@
+ECO HOGAR v2.2 - COMPROBANTES INTELIGENTES MEJORADOS
+
+CORRECCIONES
+- $ 3.500 ahora se interpreta como tres mil quinientos y no como $ 3,50.
+- Reconoce fechas escritas en español (ej. 28 de agosto de 2026).
+- Los comprobantes de transferencia identifican destinatario, medio/cuenta de origen y número de operación.
+- Mercado Pago deja de usarse como "comercio" cuando en realidad es el medio de la transferencia.
+
+NUEVO FLUJO DE TRANSFERENCIAS
+- Transferencia a una persona externa al hogar: se propone como GASTO, porque el dinero salió del hogar.
+- Transferencia a una persona del hogar con una cuenta equivalente: ECO HOGAR puede convertirla en TRANSFERENCIA INTERNA.
+- La categoría de una transferencia a tercero queda para revisión manual, ya que el comprobante no explica en qué se gastó el dinero.
+
+ACCESO RAPIDO
+- El Dashboard incorpora el botón "Cargar comprobante".
+- Abre Nuevo movimiento directamente en la sección Comprobante.
+
+NO REQUIERE SQL NUEVO.

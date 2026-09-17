@@ -1,0 +1,27 @@
+ECO HOGAR v1.6.2 - CALENDARIO MENSUAL DE TARJETAS
+
+Esta revisión mejora v1.6 para tarjetas cuyos cierres y vencimientos cambian todos los meses.
+
+INSTALACIÓN
+1) Copiá/reemplazá los archivos sobre tu carpeta principal de ECO HOGAR.
+2) Conservá tu .env.local actual.
+3) En Supabase > SQL Editor ejecutá UNA VEZ:
+   SUPABASE-v1.6.2-CALENDARIO-TARJETAS.sql
+4) Ejecutá INICIAR-ECO-HOGAR.bat.
+5) Entrá en Tarjetas > Calendario mensual.
+
+USO RECOMENDADO
+- Configurar tarjeta: límite y, si querés, días habituales como referencia.
+- Calendario mensual: cargar las fechas EXACTAS de cierre y vencimiento de cada período.
+- Las fechas mensuales tienen prioridad sobre los días habituales.
+
+Ejemplo:
+Período: septiembre 2026
+Cierre: 24/09/2026
+Vencimiento: 06/10/2026
+
+Período: octubre 2026
+Cierre: 23/10/2026
+Vencimiento: 05/11/2026
+
+No vuelvas a ejecutar SUPABASE-v1.6-TARJETAS.sql si ya lo ejecutaste para v1.6.

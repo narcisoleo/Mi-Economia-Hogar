@@ -1,0 +1,18 @@
+ECO HOGAR v1.7
+=================
+
+NOVEDAD: RESÚMENES POR CIERRE
+
+Esta versión usa las fechas exactas de cierre ya cargadas para agrupar los consumos de cada tarjeta.
+
+Ejemplo:
+- Cierre anterior: 23/08/2026
+- Próximo cierre: 23/09/2026
+- Compra 22/09: entra en el resumen que cierra 23/09.
+- Compra 24/09: pasa al resumen siguiente.
+
+IMPORTANTE:
+Para que el inicio del período sea exacto, cargá también el cierre del período anterior. Si no está cargado, ECO HOGAR calcula una estimación y lo indica en pantalla.
+
+NO HAY SQL NUEVO EN v1.7.
+Conservá tu .env.local al reemplazar archivos.

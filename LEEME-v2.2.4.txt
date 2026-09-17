@@ -1,0 +1,19 @@
+ECO HOGAR v2.2.4 - RECUPERACIÓN MFA / RLS
+
+Qué corrige:
+- El hardening MFA de v2.2.3 podía ocultar household_members aun cuando la sesión ya estaba en AAL2.
+- El Dashboard ya no confunde un bloqueo RLS con "hogar inexistente".
+- La pantalla MFA renueva el JWT y fuerza una navegación completa al terminar.
+- Se mantiene MFA en la app/proxy, RLS por hogar y Storage privado.
+
+PASOS:
+1) En Supabase > SQL Editor ejecutar SOLO:
+   SUPABASE-v2.2.4-RECUPERAR-ACCESO.sql
+2) Confirmar que los dos conteos finales sean 0.
+3) Reemplazar los archivos de la app por v2.2.4 conservando .env.local.
+4) Ejecutar INICIAR-ECO-HOGAR.bat.
+5) Cerrar sesión e iniciar nuevamente. Si el usuario tiene MFA, debe pedir el código.
+6) Confirmar que Dashboard, Cuentas, Tarjetas y Seguridad abren normalmente.
+
+NO volver a ejecutar el HARDENING v2.2.3.
+Más adelante, cuando todos los usuarios del hogar tengan MFA, se puede aplicar una regla DB más simple y estricta basada solamente en JWT aal2.

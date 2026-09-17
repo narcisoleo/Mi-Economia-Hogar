@@ -1,0 +1,33 @@
+ECO HOGAR v2.3.2
+==================
+
+OBJETIVO
+- Mejorar confiabilidad de la carga por voz.
+- Corregir el falso positivo "gasté" -> Servicios / Gas.
+- Aclarar el significado del campo de persona: ahora se muestra como "¿Para quién fue?".
+- Reforzar compartir comprobantes desde Android.
+- Oscurecer suavemente el fondo para que las tarjetas blancas resalten más.
+
+VOZ
+- "Gasté 35 mil en Carrefour con Mercado Pago" NO debe completar Gas.
+- Si reconoce Carrefour/supermercado, puede sugerir Alimentación -> Supermercado.
+- Si no hay evidencia clara, deja categoría/subcategoría para revisar.
+- "¿Para quién fue?" solo cambia si la frase lo dice explícitamente.
+
+COMPARTIR
+- Acepta image/*, PDF y application/octet-stream.
+- Si el Service Worker recibe el archivo, queda temporalmente en caché local.
+- Si Android envía el POST directo al servidor, ECO HOGAR usa un archivo privado temporal en Supabase, lo descarga en la app y lo elimina de inmediato.
+- La pantalla muestra un diagnóstico del contenido recibido para poder ajustar Mercado Pago/Naranja con datos reales.
+
+DISEÑO
+- Fondo general: gris suave #e7ebf0.
+- Tarjetas/cuadrantes principales permanecen blancos.
+
+INSTALACIÓN
+1. Reemplazar archivos conservando .env.local y .vercel.
+2. Ejecutar INICIAR-ECO-HOGAR.bat y comprobar v2.3.2.
+3. Publicar con: npx.cmd vercel@latest --prod
+4. En Android, cerrar y volver a abrir la PWA. Si no aparece como destino de Compartir, desinstalar solo la PWA y reinstalarla desde Chrome para refrescar el manifest.
+
+No requiere SQL nuevo.

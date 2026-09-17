@@ -1,0 +1,11 @@
+ECO HOGAR v1.7.2
+
+NOVEDAD
+- La Posición financiera muestra los totales familiares y, debajo, el subtotal de cuentas y tarjetas por titular (por ejemplo Leonardo y Sofía).
+- También muestra el neto individual: dinero real de cada titular menos su deuda de tarjetas.
+
+INSTALACION
+1. Copiar/reemplazar estos archivos sobre la carpeta actual de ECO HOGAR.
+2. Conservar el archivo .env.local existente.
+3. No ejecutar SQL nuevo.
+4. Ejecutar INICIAR-ECO-HOGAR.bat.

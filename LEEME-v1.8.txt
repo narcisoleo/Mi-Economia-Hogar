@@ -1,0 +1,20 @@
+ECO HOGAR v1.8
+================
+
+NOVEDAD PRINCIPAL: ESTADÍSTICAS
+
+1. Copiar/reemplazar los archivos en la carpeta del proyecto.
+2. Conservar el archivo .env.local existente.
+3. No ejecutar SQL nuevo.
+4. Ejecutar INICIAR-ECO-HOGAR.bat.
+5. En el Dashboard debe aparecer el botón "Estadísticas" y el badge v1.8.
+
+La nueva pantalla analiza:
+- ingresos, gastos y resultado del mes;
+- variación contra el mes anterior;
+- tasa de ahorro;
+- evolución de 6 meses;
+- gastos por categoría;
+- gastos por responsable;
+- dinero real vs. tarjeta;
+- principales comercios / conceptos.

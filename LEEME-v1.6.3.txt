@@ -1,0 +1,48 @@
+ECO HOGAR v1.6.3
+=================
+
+CORRECCIONES PRINCIPALES
+
+1. Crear tarjeta ya no depende de la función RPC create_credit_card_account.
+   La app crea directamente:
+     - accounts (account_type = credit_card)
+     - credit_cards (límite/configuración)
+   Esto elimina el error de PostgREST "Could not find the function ... in the schema cache".
+
+2. Se mantiene la separación contable correcta:
+   - Compra con tarjeta = gasto + aumento de deuda.
+   - NO baja Banco Provincia / Mercado Pago / Efectivo.
+   - Pago de tarjeta = baja la cuenta desde la que pagás + reduce deuda.
+   - El pago NO vuelve a contarse como gasto.
+
+3. Las transferencias comunes ya no ofrecen tarjetas como destino.
+   Para pagar una tarjeta se usa Tarjetas > Pagar tarjeta.
+
+4. Se incluye una reparación de datos de versiones v1.6/v1.6.1:
+   SUPABASE-v1.6.3-REPARAR-TARJETAS.sql
+   Este SQL convierte configuraciones antiguas vinculadas a una cuenta bancaria
+   en una tarjeta separada y conserva límite/calendario.
+
+INSTALACIÓN
+
+1. Copiar/reemplazar los archivos de esta versión en la carpeta de ECO HOGAR.
+2. Conservar .env.local.
+3. Ejecutar UNA VEZ en Supabase SQL Editor:
+      SUPABASE-v1.6.3-REPARAR-TARJETAS.sql
+4. Ejecutar INICIAR-ECO-HOGAR.bat.
+5. Confirmar que arriba aparezca v1.6.3.
+
+PRUEBA RECOMENDADA
+
+A) Crear "Visa Banco Provincia" desde Tarjetas > Agregar tarjeta.
+B) Registrar Gasto de $1.000 usando esa tarjeta.
+   Esperado:
+      Gastos del mes +$1.000
+      Deuda tarjeta +$1.000
+      Disponible -$1.000
+      Saldo Banco Provincia: SIN CAMBIOS
+C) Pagar $400 desde Banco Provincia en Tarjetas > Pagar tarjeta.
+   Esperado:
+      Deuda tarjeta queda $600
+      Banco Provincia baja $400
+      Gastos del mes no cambia por el pago.

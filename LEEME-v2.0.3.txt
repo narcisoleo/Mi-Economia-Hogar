@@ -1,0 +1,12 @@
+ECO HOGAR v2.0.3
+
+1) Copiar/reemplazar los archivos de esta versión conservando .env.local.
+2) En Supabase > SQL Editor ejecutar UNA vez:
+   SUPABASE-v2.0.3-METADATOS-TARJETAS.sql
+3) Ejecutar INICIAR-ECO-HOGAR.bat.
+4) Debe verse v2.0.3.
+
+LIMPIEZA DE ERRORES DE PDF
+- En Tarjetas > Resúmenes inteligentes ahora cada resumen tiene "Eliminar resumen".
+- Esa acción elimina el resumen y los movimientos importados desde ese PDF.
+- En Tarjetas > Tus tarjetas, "Eliminar tarjeta" revisa dependencias y permite borrar por completo una tarjeta de prueba/error con doble confirmación.

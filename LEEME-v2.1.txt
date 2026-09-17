@@ -1,0 +1,21 @@
+ECO HOGAR v2.1.1 - COMPROBANTES INTELIGENTES
+
+NOVEDADES
+- Lectura inteligente de fotos JPG/PNG/WEBP con OCR local en el navegador.
+- Lectura de PDFs digitales usando Python 3 local y el lector PDF incluido.
+- Detecta y completa de forma asistida: importe, fecha, comercio y categoría sugerida.
+- La lectura nunca guarda el movimiento sola: primero completa el formulario para revisión.
+- Mantiene el archivo original como comprobante asociado al movimiento.
+- No requiere SQL nuevo.
+- El OCR de imágenes usa Tesseract.js desde CDN y requiere Internet durante la lectura.
+- Un PDF escaneado sin texto debe cargarse como imagen/captura en esta versión.
+
+PRUEBA RECOMENDADA
+1. Abrir + Registrar movimiento > Gasto.
+2. Adjuntar una foto clara de un ticket.
+3. Pulsar "Leer comprobante y completar".
+4. Revisar importe, fecha, comercio y categoría sugerida.
+5. Corregir cualquier dato si hace falta y guardar.
+
+IMPORTANTE
+La lectura automática es una ayuda. Siempre revisar los datos antes de guardar.

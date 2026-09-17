@@ -1,0 +1,37 @@
+ECO HOGAR v2.2 - MOVIL + SEGURIDAD + PRODUCCION
+================================================
+
+NOVEDADES
+- PWA instalable en Android/iPhone/PC.
+- Manifest, iconos y service worker seguro.
+- El service worker NO cachea datos financieros ni APIs.
+- Nueva pantalla Seguridad y dispositivo.
+- MFA / autenticacion en dos pasos con TOTP de Supabase.
+- Si un usuario activa MFA, los accesos protegidos exigen AAL2.
+- Cierre de otras sesiones o de todos los dispositivos.
+- Exportacion manual de backup JSON del hogar.
+- Cabeceras HTTP de seguridad.
+- SQL de auditoria de RLS/Storage solo lectura.
+- Proyecto preparado para publicacion HTTPS.
+
+IMPORTANTE
+La app sigue funcionando en localhost. Para que Leonardo y Sofia la usen desde
+sus celulares sin depender de la PC hay que PUBLICARLA en un hosting HTTPS.
+Ver PUBLICAR-ECO-HOGAR-v2.2.txt.
+
+MFA
+1. Entrar a Dashboard > Seguridad.
+2. Activar autenticacion en dos pasos.
+3. Escanear el QR con Google Authenticator/Authy/1Password/Apple Passwords.
+4. Escribir el codigo de 6 digitos.
+5. En el siguiente login ECO HOGAR pedira contraseña + codigo.
+
+PWA
+Una vez publicada en HTTPS:
+- Android/Chrome: boton Instalar o menu > Instalar aplicacion.
+- iPhone/Safari: Compartir > Agregar a pantalla de inicio.
+
+SQL
+SUPABASE-v2.2-AUDITORIA-SEGURIDAD.sql es SOLO LECTURA. No es obligatorio para
+que la app funcione, pero conviene ejecutarlo y revisar resultados antes de
+publicar.

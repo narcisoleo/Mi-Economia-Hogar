@@ -1,0 +1,30 @@
+ECO HOGAR v2.3.3 — PUBLICACIÓN
+==============================
+
+Antes de publicar:
+- Conservar .env.local.
+- Conservar la carpeta .vercel para mantener el vínculo con el proyecto existente.
+- No agregar service_role al frontend.
+
+Prueba local:
+  INICIAR-ECO-HOGAR.bat
+
+Publicación:
+  npx.cmd vercel@latest --prod
+
+Dominio de producción configurado:
+  https://mi-economia-hogar-lilac.vercel.app
+
+Después del deploy:
+- Cerrar por completo la PWA en Android y volver a abrirla.
+- Debe mostrar v2.3.3.
+- No debería ser necesario desinstalarla/reinstalarla: cambió el Service Worker y se fuerza actualización.
+
+Pruebas recomendadas:
+1. Voz: “Gasté 35 mil en Carrefour con Mercado Pago”.
+2. Compartir una transferencia de Banco Carrefour a Mercado Pago.
+3. Compartir una transferencia recibida en Mercado Pago que muestre saldo antes/después.
+4. Compartir un pago PDF de Mercado Pago.
+5. Compartir Naranja X / Cuenta DNI.
+
+No requiere SQL nuevo ni nuevas variables de entorno.

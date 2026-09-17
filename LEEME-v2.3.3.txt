@@ -1,0 +1,36 @@
+ECO HOGAR v2.3.3 — CALIDAD DE CAPTURA
+=======================================
+
+Esta versión corrige errores observados en pruebas reales de v2.3.2.
+
+VOZ
+- Mayor tiempo de escucha: pausa aproximada de 3,5 s y máximo de 20 s.
+- Acumula fragmentos de voz y permite terminar el dictado manualmente.
+- El texto escuchado puede editarse y reanalizarse antes de guardar.
+- No confunde “gasté” con “gas”.
+- Si una categoría es ambigua, deja la subcategoría sin elegir en vez de inventarla.
+- “¿Para quién fue?” es opcional y solo se cambia por voz cuando se dice explícitamente.
+
+COMPROBANTES COMPARTIDOS
+- Se verificó que Android sí entrega archivos a ECO HOGAR por Service Worker.
+- Mejor lectura de transferencias enviadas y recibidas.
+- Distingue origen y destino: Mercado Pago, Banco Provincia/Cuenta DNI,
+  Banco Carrefour, Naranja X, AstroPay, Ualá y Brubank.
+- Corrige importes cuando un comprobante también muestra saldos antes/después.
+- Corrige fechas como 1/sep, 27/AGO/2026 y “31 de agosto 2026”.
+- No confunde una transferencia con una compra solo por aparecer Carrefour.
+- Transferencia recibida de tercero => ingreso. Transferencia a persona del hogar => transferencia interna.
+- No elige Movistar Línea 1/2/3 ni categorías similares al azar.
+- OCR de imágenes con preprocesamiento y segunda pasada cuando la lectura es débil.
+
+INTERFAZ
+- Fondo gris suave #e7ebf0 para resaltar las tarjetas blancas.
+- “¿Para quién fue?” muestra “Gasto común / sin asignar a una persona”.
+
+INSTALACIÓN
+1. Reemplazar los archivos de la versión anterior.
+2. Conservar .env.local y .vercel.
+3. Ejecutar INICIAR-ECO-HOGAR.bat y verificar v2.3.3.
+4. Publicar con: npx.cmd vercel@latest --prod
+
+No requiere SQL nuevo ni variables nuevas en Vercel.
